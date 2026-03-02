@@ -25,7 +25,7 @@ export function Header() {
             width={48}
             height={48}
           />
-          <div className="hidden sm:block">
+          <div className="block">
             <span className="text-lg font-bold tracking-wide text-foreground">
               EBC
             </span>
