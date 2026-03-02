@@ -16,9 +16,9 @@ export function Hero() {
         <div className="absolute inset-0 bg-gradient-to-r from-background via-background/60 to-transparent" />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-7xl px-6 py-0 md:py-32 md:pt-40">
+      <div className="relative z-10 mx-auto max-w-7xl px-6 py-0 pt-20 md:py-32 md:pt-40">
         <div className=" mx-auto flex flex-col md:flex-row  justify-center items-center md:gap-12">
-          <div className="relative w-full  h-150 md:h-150 ">
+          <div className="relative w-full  h-[360] md:mt-0 md:h-150 ">
             <Image
               src="/logoSemFundo-removebg-preview.png"
               alt="EBC Servicos Terceirizados"
