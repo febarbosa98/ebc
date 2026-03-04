@@ -20,7 +20,7 @@ export function Header() {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3">
         <a href="#inicio" className="flex items-center gap-3">
           <Image
-            src="/logoSemFundo-removebg-preview.png"
+            src="/logo5.png"
             alt="EBC Servicos Terceirizados"
             width={48}
             height={48}

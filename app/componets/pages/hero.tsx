@@ -1,59 +1,106 @@
+"use client"
+
 import Image from "next/image"
 import { ArrowRight } from "lucide-react"
+import { useAnimateOnScroll } from "../hooks/use-animate-on-scroll"
 
 export function Hero() {
+  const { ref: logoRef, isVisible: logoVisible } = useAnimateOnScroll()
+  const { ref: titleRef, isVisible: titleVisible } = useAnimateOnScroll()
+  const { ref: descRef, isVisible: descVisible } = useAnimateOnScroll()
+  const { ref: btnsRef, isVisible: btnsVisible } = useAnimateOnScroll()
+
+
   return (
     <section id="inicio" className="relative min-h-screen flex items-center overflow-hidden">
       <div className="absolute inset-0">
         <Image
-          src="/images/hero-corporate.png"
+          src="/fundo5.png"
           alt="Seguranca profissional"
           fill
           className="object-cover"
           priority
         />
         <div className="absolute inset-0 bg-background/80" />
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/60 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-r from-background via-background/60 to-transparent" />
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 py-0 pt-20 md:py-32 md:pt-40">
         <div className=" mx-auto flex flex-col md:flex-row  justify-center items-center md:gap-12">
-          <div className="relative w-full  h-[360] md:mt-0 md:h-150 ">
+          <div 
+          ref={logoRef}
+            className={`relative w-full  h-[360] md:mt-0 md:h-150  ${
+              logoVisible
+                ? "animate-in fade-in zoom-in-95 duration-700"
+                : "opacity-0"
+            }`}>
             <Image
-              src="/logoSemFundo-removebg-preview.png"
+              src="/logo5.png"
               alt="EBC Servicos Terceirizados"
             //   width={600}
             //   height={100}
             fill
-              className="object-contain h-auto"
+              className="object-contain h-auto "
               priority
             />
+            {/* <div className="absolute inset-0 bg-background/80" /> */}
           </div>
-          <div>
+          <div className="">
 
          
 
-          <h1 className="text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl lg:text-6xl text-balance">
+            {/* animate-in fade-in slide-in-from-right duration-600 */}
+            <div
+            ref={titleRef}
+            className={`${
+              titleVisible
+                ? "animate-in fade-in slide-in-from-bottom-6 duration-700 delay-200"
+                : "opacity-0"
+            }`}
+          >
+          <h1 className="text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl lg:text-6xl text-balance
+          ">
             Segurança que{" "}
             <span className="text-gold">protege</span>{" "}
             o que importa
           </h1>
+          </div>
 
-          <p className="mt-6 max-w-lg text-lg leading-relaxed text-muted-foreground">
+            <div
+            ref={descRef}
+            className={`${
+              descVisible
+                ? "animate-in fade-in slide-in-from-bottom-6 duration-700 delay-300"
+                : "opacity-0"
+            }`}
+          >
+
+          
+          <p className="mt-6 max-w-lg text-lg leading-relaxed text-muted-foreground animate-in fade-in slide-in-from-right duration-800 ">
             A EBC Serviços Terceirizados oferece soluções completas de segurança para empresas, eventos e proteção pessoal com excelência e profissionalismo.
           </p>
-
-          <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+            </div>
+          <div  
+          ref={btnsRef}
+          className={`mt-10 flex flex-col gap-4 sm:flex-row ${
+              btnsVisible
+                ? "animate-in fade-in slide-in-from-bottom-6 duration-700 delay-500"
+                : "opacity-0"
+            }`}
+          >
             <a
               href="#contato"
-              className="inline-flex items-center justify-center gap-2 rounded-sm bg-gold px-8 py-4 text-sm font-bold uppercase tracking-wider text-background transition-colors hover:bg-gold-light"
+              className="inline-flex items-center justify-center gap-2 rounded-sm bg-gold px-8 py-4 text-sm font-bold uppercase tracking-wider text-background transition-colors hover:bg-gold-light
+              
+              "
             >
               Solicitar Orçamento
               <ArrowRight className="h-4 w-4" />
             </a>
             <a
               href="#servicos"
-              className="inline-flex items-center justify-center gap-2 rounded-sm border border-border px-8 py-4 text-sm font-bold uppercase tracking-wider text-foreground transition-colors hover:border-gold hover:text-gold"
+              className="inline-flex items-center justify-center gap-2 rounded-sm border border-border px-8 py-4 text-sm font-bold uppercase tracking-wider text-foreground transition-colors hover:border-gold hover:text-gold
+              "
             >
               Nossos Serviços
             </a>

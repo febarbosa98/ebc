@@ -1,5 +1,8 @@
+"use client"
+
 import Image from "next/image"
 import { Shield } from "lucide-react"
+import { useAnimateOnScroll } from "../hooks/use-animate-on-scroll"
 
 const navLinks = [
   { label: "Inicio", href: "#inicio" },
@@ -10,14 +13,23 @@ const navLinks = [
 ]
 
 export function Footer() {
+const { ref: menuRef, isVisible: menuVisible } = useAnimateOnScroll()
+
   return (
     <footer className="border-t border-border bg-background">
-      <div className="mx-auto max-w-7xl px-6 py-12">
+      <div 
+      ref={menuRef}
+          className={`mx-auto max-w-7xl px-6 py-12 ${
+              menuVisible
+                ? "animate-in fade-in slide-in-from-bottom-8 duration-700"
+                : "opacity-0"
+            }`}
+      >
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           <div className="sm:col-span-2 lg:col-span-1">
             <a href="#inicio" className="flex items-center gap-3">
               <Image
-                src="/logoSemFundo-removebg-preview.png"
+                src="/logo5.png"
                 alt="EBC Servicos Terceirizados"
                 width={40}
                 height={40}
@@ -57,13 +69,19 @@ export function Footer() {
             </h4>
             <nav className="mt-4 flex flex-col gap-3">
               <a href="#servicos" className="text-sm text-muted-foreground transition-colors hover:text-gold">
-                Segurança Empresarial
+                Controle de Acesso
               </a>
               <a href="#servicos" className="text-sm text-muted-foreground transition-colors hover:text-gold">
-                Segurança de Eventos
+                Recepção Profissional
               </a>
               <a href="#servicos" className="text-sm text-muted-foreground transition-colors hover:text-gold">
-                Segurança Pessoal
+                Análise de Risco
+              </a>
+              <a href="#servicos" className="text-sm text-muted-foreground transition-colors hover:text-gold">
+                Bombeiro Civil
+              </a>
+              <a href="#servicos" className="text-sm text-muted-foreground transition-colors hover:text-gold">
+                Limpeza e Conservação
               </a>
             </nav>
           </div>
@@ -73,8 +91,15 @@ export function Footer() {
               Contato
             </h4>
             <div className="mt-4 flex flex-col gap-3">
-              <p className="text-sm text-muted-foreground">(00) 0000-0000</p>
-              <p className="text-sm text-muted-foreground">contato@ebcseguranca.com.br</p>
+              <a href="tel:+550000000000" className="text-sm text-muted-foreground transition-colors hover:text-gold">
+                (00) 0000-0000
+              </a>
+              <a href="mailto:contato@ebcseguranca.com.br" className="text-sm text-muted-foreground transition-colors hover:text-gold">
+                contato@ebcseguranca.com.br
+              </a>
+              <a href="https://www.instagram.com/ebcseguranca" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground transition-colors hover:text-gold">
+                    @ebcseguranca
+                  </a>
               <p className="text-sm text-muted-foreground">Brasil</p>
             </div>
           </div>

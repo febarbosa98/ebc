@@ -1,7 +1,8 @@
 "use client"
 
-import { Phone, Mail, MapPin, Send } from "lucide-react"
+import { Phone, Mail, MapPin, Send, Instagram } from "lucide-react"
 import { useState } from "react"
+import { useAnimateOnScroll } from "../hooks/use-animate-on-scroll"
 
 export function Contact() {
   const [formData, setFormData] = useState({
@@ -20,12 +21,21 @@ export function Contact() {
       "_blank"
     )
   }
+const { ref: menuRef, isVisible: menuVisible } = useAnimateOnScroll()
+const { ref: menuRef2, isVisible: menuVisible2 } = useAnimateOnScroll()
 
   return (
     <section id="contato" className="relative py-24 lg:py-32 bg-secondary">
       <div className="mx-auto max-w-7xl px-6">
         <div className="grid gap-16 lg:grid-cols-2">
-          <div>
+          <div
+            ref={menuRef}
+            className={`${
+              menuVisible
+                ? "animate-in fade-in slide-in-from-left-8 duration-700"
+                : "opacity-0"
+            }`}
+          >
             <span className="text-sm font-semibold tracking-[0.2em] uppercase text-gold">
               Fale Conosco
             </span>
@@ -43,7 +53,9 @@ export function Contact() {
                 </div>
                 <div>
                   <p className="text-sm font-semibold text-foreground">Telefone</p>
-                  <p className="text-sm text-muted-foreground">(00) 0000-0000</p>
+                  <a href="tel:+550000000000" className="text-sm text-muted-foreground transition-colors hover:text-gold">
+                (00) 0000-0000
+              </a>
                 </div>
               </div>
 
@@ -53,7 +65,22 @@ export function Contact() {
                 </div>
                 <div>
                   <p className="text-sm font-semibold text-foreground">E-mail</p>
-                  <p className="text-sm text-muted-foreground">contato@ebcseguranca.com.br</p>
+                  <a href="mailto:contato@ebcseguranca.com.br" className="text-sm text-muted-foreground transition-colors hover:text-gold">
+                contato@ebcseguranca.com.br
+              </a>
+                  
+                </div>
+              </div>
+
+              <div className="flex items-center gap-4">
+                <div className="flex h-12 w-12 items-center justify-center rounded-sm bg-gold/10 border border-gold/30">
+                  <Instagram className="h-5 w-5 text-gold" />
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-foreground">Instagram</p>
+                  <a href="https://www.instagram.com/ebcseguranca" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground transition-colors hover:text-gold">
+                    @ebcseguranca
+                  </a>
                 </div>
               </div>
 
@@ -68,8 +95,17 @@ export function Contact() {
               </div>
             </div>
           </div>
-
-          <form onSubmit={handleSubmit} className="flex flex-col gap-5 rounded-sm border border-border bg-card p-8">
+          
+          <div
+          ref={menuRef2}
+          className={`${
+              menuVisible2
+                ? "animate-in fade-in slide-in-from-right-8 duration-700"
+                : "opacity-0"
+            }`}
+          >
+          <form
+          onSubmit={handleSubmit} className="flex flex-col gap-5 rounded-sm border border-border bg-card p-8">
             <div className="grid gap-5 sm:grid-cols-2">
               <div className="flex flex-col gap-2">
                 <label htmlFor="name" className="text-sm font-semibold text-foreground">
@@ -117,18 +153,21 @@ export function Contact() {
               </div>
               <div className="flex flex-col gap-2">
                 <label htmlFor="service" className="text-sm font-semibold text-foreground">
-                  Servico
+                  Serviço
                 </label>
                 <select
                   id="service"
                   value={formData.service}
                   onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                  className="rounded-sm border border-border bg-background px-4 py-3 text-sm text-foreground focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold"
+                  className="rounded-sm border border-border bg-background px-4 py-3 text-sm text-foreground focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold "
                 >
-                  <option value="">Selecione um servico</option>
-                  <option value="Seguranca Empresarial">Seguranca Empresarial</option>
-                  <option value="Seguranca de Eventos">Seguranca de Eventos</option>
-                  <option value="Seguranca Pessoal">Seguranca Pessoal</option>
+                  <option className="hover:bg-red-500" value="">Selecione um serviço</option>
+                  <option  value="Segurança Empresarial">Segurança Empresarial</option>
+                  <option value="Segurança de Eventos">Segurança de Eventos</option>
+                  <option value="Segurança Pessoal">Segurança Pessoal</option>
+                  <option value="Limpeza Profissional">Limpeza Profissional</option>
+                  <option value="Controle de Acesso">Controle de Acesso</option>
+                  <option value="Analise de Risco">Analise de Risco</option>
                 </select>
               </div>
             </div>
@@ -143,7 +182,7 @@ export function Contact() {
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 className="resize-none rounded-sm border border-border bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold"
-                placeholder="Descreva sua necessidade de seguranca..."
+                placeholder="Descreva sua necessidade de segurança..."
               />
             </div>
 
@@ -155,6 +194,7 @@ export function Contact() {
               <Send className="h-4 w-4" />
             </button>
           </form>
+          </div>
         </div>
       </div>
     </section>
