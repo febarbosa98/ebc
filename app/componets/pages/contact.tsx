@@ -1,6 +1,6 @@
 "use client"
 
-import { Phone, Mail, MapPin, Send, Instagram } from "lucide-react"
+import { Phone, Mail, MapPin, Send, Instagram, Loader2, CheckCircle } from "lucide-react"
 import { useState } from "react"
 import { useAnimateOnScroll } from "../hooks/use-animate-on-scroll"
 
@@ -12,14 +12,40 @@ export function Contact() {
     service: "",
     message: "",
   })
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle")
+  const [errorMsg, setErrorMsg] = useState("")
 
-  const handleSubmit = (e: React.FormEvent) => {
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    const whatsappMessage = `Olá! Me chamo ${formData.name}. Gostaria de saber mais sobre ${formData.service || 'os servicos de seguranca'}. ${formData.message}`
-    window.open(
-      `https://wa.me/5511960255173?text=${encodeURIComponent(whatsappMessage)}`,
-      "_blank"
-    )
+    setStatus("loading")
+    setErrorMsg("")
+
+    try {
+      const res = await fetch("/api/contact/", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      })
+
+      const data = await res.json()
+
+      if (!res.ok) {
+        setStatus("error")
+        setErrorMsg(data.error || "Erro ao enviar mensagem.")
+        return
+      }
+
+      if (data.method === "mailto") {
+        window.location.href = data.mailto
+      }
+
+      setStatus("success")
+      setFormData({ name: "", email: "", phone: "", service: "", message: "" })
+    } catch {
+      setStatus("error")
+      setErrorMsg("Erro ao enviar mensagem. Tente novamente.")
+    }
   }
 const { ref: menuRef, isVisible: menuVisible } = useAnimateOnScroll()
 const { ref: menuRef2, isVisible: menuVisible2 } = useAnimateOnScroll()
@@ -188,11 +214,35 @@ const { ref: menuRef2, isVisible: menuVisible2 } = useAnimateOnScroll()
 
             <button
               type="submit"
+              disabled={status === "loading"}
               className="inline-flex items-center justify-center gap-2 rounded-sm bg-gold px-8 py-4 text-sm font-bold uppercase tracking-wider text-background transition-colors hover:bg-gold-light"
             >
-              Enviar Mensagem
-              <Send className="h-4 w-4" />
+               {status === "loading" ? (
+                <>
+                  Enviando...
+                  <Loader2 className="h-4 w-4 animate-spin" />
+                </>
+              ) : status === "success" ? (
+                <>
+                  Mensagem Enviada
+                  <CheckCircle className="h-4 w-4" />
+                </>
+              ) : (
+                <>
+                  Enviar Mensagem
+                  <Send className="h-4 w-4" />
+                </>
+              )}
             </button>
+            {status === "error" && (
+              <p className="text-sm text-red-400 text-center">{errorMsg}</p>
+            )}
+
+            {status === "success" && (
+              <p className="text-sm text-green-400 text-center">
+                Sua mensagem foi enviada com sucesso! Entraremos em contato em breve.
+              </p>
+            )}
           </form>
           </div>
         </div>
