@@ -5,11 +5,12 @@ import { Shield } from "lucide-react"
 import { useAnimateOnScroll } from "../hooks/use-animate-on-scroll"
 
 const navLinks = [
-  { label: "Inicio", href: "#inicio" },
-  { label: "Sobre", href: "#sobre" },
-  { label: "Serviços", href: "#servicos" },
-  { label: "Diferenciais", href: "#diferenciais" },
-  { label: "Contato", href: "#contato" },
+  { label: "Inicio", href: "/#inicio" },
+  { label: "Sobre", href: "/#sobre" },
+  { label: "Serviços", href: "/#servicos" },
+  { label: "Diferenciais", href: "/#diferenciais" },
+  { label: "Contato", href: "/#contato" },
+  { label: "Trabalhe Conosco", href: "/trabalhe-conosco" },
 ]
 
 export function Footer() {
@@ -42,7 +43,7 @@ const { ref: menuRef, isVisible: menuVisible } = useAnimateOnScroll()
               </div>
             </a>
             <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-              Empresa de segurança especializada em proteção empresarial, segurança de eventos e segurança pessoal.
+              Empresa especializada em serviços terceirizados: controle de acesso, recepção, bombeiro civil, limpeza e análise de risco.
             </p>
           </div>
 
@@ -83,6 +84,7 @@ const { ref: menuRef, isVisible: menuVisible } = useAnimateOnScroll()
               <a href="#servicos" className="text-sm text-muted-foreground transition-colors hover:text-gold">
                 Limpeza e Conservação
               </a>
+              
             </nav>
           </div>
 
@@ -94,11 +96,11 @@ const { ref: menuRef, isVisible: menuVisible } = useAnimateOnScroll()
               <a href="tel:+550000000000" className="text-sm text-muted-foreground transition-colors hover:text-gold">
                 (00) 0000-0000
               </a>
-              <a href="mailto:contato@ebcseguranca.com.br" className="text-sm text-muted-foreground transition-colors hover:text-gold">
-                contato@ebcseguranca.com.br
+              <a href="mailto:contato@ebcservicos.com.br" className="text-sm text-muted-foreground transition-colors hover:text-gold">
+                contato@ebcservicos.com.br
               </a>
-              <a href="https://www.instagram.com/ebcseguranca" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground transition-colors hover:text-gold">
-                    @ebcseguranca
+              <a href="https://www.instagram.com/ebcservicos" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground transition-colors hover:text-gold">
+                    @ebcservicos
                   </a>
               <p className="text-sm text-muted-foreground">Brasil</p>
             </div>

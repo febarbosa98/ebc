@@ -46,10 +46,10 @@ export function CTA() {
         }`}>
 
         <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl text-balance">
-          Proteja o que é mais importante para você
+          Soluções sob medida para o seu negócio
         </h2>
         <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-          Não espere acontecer. Fale com nossos especialistas e tenha um plano de segurança sob medida para a sua necessidade.
+         Não espere mais. Fale com nossos especialistas e tenha serviços terceirizados de qualidade sob medida para a sua necessidade.
         </p>
         </div>
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">

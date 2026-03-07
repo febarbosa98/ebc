@@ -1,4 +1,4 @@
-import Image from "next/image";
+// import Image from "next/image";
 import { Header } from "./componets/layout/header";
 import { Footer } from "./componets/layout/footer";
 import { CTA } from "./componets/pages/cta";

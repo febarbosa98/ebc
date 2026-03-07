@@ -12,12 +12,12 @@ const differentials = [
   {
     icon: Clock,
     title: "Disponibilidade 24/7",
-    description: "Atendimento e monitoramento ininterrupto, garantindo segurança a qualquer hora do dia ou da noite.",
+    description: "Atendimento e suporte ininterrupto, garantindo cobertura a qualquer hora do dia ou da noite.",
   },
   {
     icon: Headphones,
     title: "Suporte Dedicado",
-    description: "Canal de comunicação exclusivo com resposta rápida para qualquer situação ou emergência.",
+    description: "Canal de comunicação exclusivo com resposta rápida para qualquer situação ou necessidade.",
   },
   {
     icon: Lock,
@@ -27,12 +27,12 @@ const differentials = [
   {
     icon: Zap,
     title: "Resposta Rapida",
-    description: "Protocolos de ação imediata para responder a qualquer tipo de incidente com agilidade.",
+    description: "Protocolos de ação imediata para responder a qualquer tipo de demanda com agilidade.",
   },
   {
     icon: Target,
     title: "Planos Personalizados",
-    description: "Cada cliente recebe uma solução de segurança sob medida, alinhada às suas necessidades.",
+    description: "Cada cliente recebe uma solução sob medida, alinhada às suas necessidades especificas.",
   },
 ]
 
@@ -69,7 +69,7 @@ export function Differentials() {
                 : "opacity-0"
             }`}>
           <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
-            Combinamos experiencia, tecnologia e compromisso para entregar o mais alto nivel de seguranca.
+            Combinamos experiencia, tecnologia e compromisso para entregar o mais alto nivel de serviço.
           </p>
             </div>
         </div>

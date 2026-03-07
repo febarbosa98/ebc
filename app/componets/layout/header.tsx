@@ -5,11 +5,12 @@ import Image from "next/image"
 import { Menu, X, Phone } from "lucide-react"
 
 const navLinks = [
-  { label: "Inicio", href: "#inicio" },
-  { label: "Sobre", href: "#sobre" },
-  { label: "Serviços", href: "#servicos" },
-  { label: "Diferenciais", href: "#diferenciais" },
-  { label: "Contato", href: "#contato" },
+  { label: "Inicio", href: "/#inicio" },
+  { label: "Sobre", href: "/#sobre" },
+  { label: "Serviços", href: "/#servicos" },
+  { label: "Diferenciais", href: "/#diferenciais" },
+  { label: "Contato", href: "/#contato" },
+  { label: "Trabalhe Conosco", href: "/trabalhe-conosco" },
 ]
 
 export function Header() {

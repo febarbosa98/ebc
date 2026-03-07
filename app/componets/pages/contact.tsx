@@ -69,7 +69,7 @@ const { ref: menuRef2, isVisible: menuVisible2 } = useAnimateOnScroll()
               Solicite um orçamento personalizado
             </h2>
             <p className="mt-4 leading-relaxed text-muted-foreground">
-              Entre em contato conosco e receba uma proposta sob medida para as suas necessidades de segurança.
+              Entre em contato conosco e receba uma proposta sob medida para as suas necessidades.
             </p>
 
             <div className="mt-10 flex flex-col gap-6">
@@ -91,8 +91,8 @@ const { ref: menuRef2, isVisible: menuVisible2 } = useAnimateOnScroll()
                 </div>
                 <div>
                   <p className="text-sm font-semibold text-foreground">E-mail</p>
-                  <a href="mailto:contato@ebcseguranca.com.br" className="text-sm text-muted-foreground transition-colors hover:text-gold">
-                contato@ebcseguranca.com.br
+                  <a href="mailto:contato@ebcservicos.com.br" className="text-sm text-muted-foreground transition-colors hover:text-gold">
+                contato@ebcservicos.com.br
               </a>
                   
                 </div>
@@ -104,8 +104,8 @@ const { ref: menuRef2, isVisible: menuVisible2 } = useAnimateOnScroll()
                 </div>
                 <div>
                   <p className="text-sm font-semibold text-foreground">Instagram</p>
-                  <a href="https://www.instagram.com/ebcseguranca" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground transition-colors hover:text-gold">
-                    @ebcseguranca
+                  <a href="https://www.instagram.com/ebcservicos" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground transition-colors hover:text-gold">
+                    @ebcservicos
                   </a>
                 </div>
               </div>
@@ -187,13 +187,12 @@ const { ref: menuRef2, isVisible: menuVisible2 } = useAnimateOnScroll()
                   onChange={(e) => setFormData({ ...formData, service: e.target.value })}
                   className="rounded-sm border border-border bg-background px-4 py-3 text-sm text-foreground focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold "
                 >
-                  <option className="hover:bg-red-500" value="">Selecione um serviço</option>
-                  <option  value="Segurança Empresarial">Segurança Empresarial</option>
-                  <option value="Segurança de Eventos">Segurança de Eventos</option>
-                  <option value="Segurança Pessoal">Segurança Pessoal</option>
-                  <option value="Limpeza Profissional">Limpeza Profissional</option>
+                  <option value="">Selecione um serviço</option>
                   <option value="Controle de Acesso">Controle de Acesso</option>
+                  <option value="Recepção Profissional">Recepção Profissional</option>
                   <option value="Analise de Risco">Analise de Risco</option>
+                  <option value="Bombeiro Civil">Bombeiro Civil</option>
+                  <option value="Limpeza Profissional">Limpeza Profissional</option>
                 </select>
               </div>
             </div>
@@ -208,7 +207,7 @@ const { ref: menuRef2, isVisible: menuVisible2 } = useAnimateOnScroll()
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 className="resize-none rounded-sm border border-border bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold"
-                placeholder="Descreva sua necessidade de segurança..."
+                placeholder="Descreva sua necessidade..."
               />
             </div>
 

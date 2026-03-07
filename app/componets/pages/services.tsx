@@ -126,10 +126,10 @@ export function Services() {
             }`}
           >
           <h2 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl text-balance">
-            Soluções completas de segurança
+            Soluções completas em serviços terceirizados para o seu negócio
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
-            Oferecemos uma gama completa de servicos de segurança, adaptados às necessidades especificas de cada cliente.
+            Oferecemos uma gama completa de serviços terceirizados, adaptados às necessidades especificas de cada cliente.
           </p>
           </div>
         </div>

@@ -60,9 +60,9 @@ export function Hero() {
           >
           <h1 className="text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl lg:text-6xl text-balance
           ">
-            Segurança que{" "}
-            <span className="text-gold">protege</span>{" "}
-            o que importa
+            Excelencia em{" "}
+            <span className="text-gold">serviços terceirizados</span>{" "}
+            
           </h1>
           </div>
 
@@ -77,7 +77,7 @@ export function Hero() {
 
           
           <p className="mt-6 max-w-lg text-lg leading-relaxed text-muted-foreground animate-in fade-in slide-in-from-right duration-800 ">
-            A EBC Serviços Terceirizados oferece soluções completas de segurança para empresas, eventos e proteção pessoal com excelência e profissionalismo.
+            A EBC Servicos Terceirizados oferece soluções completas em controle de acesso, recepção, bombeiro civil, limpeza e análise de risco com excelência e profissionalismo.
           </p>
             </div>
           <div  

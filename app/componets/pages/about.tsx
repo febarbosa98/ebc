@@ -7,8 +7,8 @@ import { useAnimateOnScroll } from "../hooks/use-animate-on-scroll"
 const highlights = [
   {
     icon: Shield,
-    title: "Proteção Integral",
-    description: "Cobertura completa para todos os tipos de ameaça e risco.",
+    title: "Serviços integrados",
+    description: "Soluções completas de terceirização para o seu negócio.",
   },
   {
     icon: Award,
@@ -50,7 +50,7 @@ export function About() {
               Quem Somos
             </span>
             <h2 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl text-balance">
-              Excelência em segurança desde a nossa fundação
+              Excelência em serviços terceirizados desde a nossa fundação
             </h2>
             <div
               ref={textRef}
@@ -63,10 +63,10 @@ export function About() {
 
             
             <p className="mt-6 leading-relaxed text-muted-foreground">
-              A EBC Serviços Terceirizados é referência no mercado de segurança privada. Com uma equipe de profissionais altamente qualificados e tecnologia de última geração, oferecemos soluções de segurança personalizadas que garantem a tranquilidade dos nossos clientes.
+              A EBC Servicos Terceirizados e referencia no mercado de terceirização. Com uma equipe de profissionais altamente qualificados e tecnologia de ultima geração, oferecemos soluções personalizadas que garantem a tranquilidade e eficiência dos nossos clientes.
             </p>
             <p className="mt-4 leading-relaxed text-muted-foreground">
-              Nossa missão é proporcionar proteção de excelência, combinando expertise humana com inovação tecnológica para entregar resultados superiores.
+              Nossa missão e proporcionar serviços de excelência, combinando expertise humana com inovação tecnológica para entregar resultados superiores.
             </p>
             </div>
 
