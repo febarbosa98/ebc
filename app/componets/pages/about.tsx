@@ -256,11 +256,12 @@ A EBC nasceu de uma história de vida.
                     <div key={item.nome} className="  items-center mt-3 bg-card  p-6 rounded-3xl">
                       <div className="grid md:grid-cols-2  mx-auto">
     
-                      <div className="flex flex-col gap-4 items-left justify-center ">
+                      <div className="flex flex-col items-left justify-center ">
                         <h3 className="text-md font-bold text-foreground">
-                          {item.nome} - <span className="text-gold">{item.cargo}</span>
+                          {item.nome}
                         </h3>
-                        <p className="text-sm leading-relaxed text-muted-foreground">
+                        <span className="text-gold mt-0.5">{item.cargo}</span>
+                        <p className="text-sm mt-2 leading-relaxed text-muted-foreground">
                           {item.descricao}
                         </p>
                       </div>
