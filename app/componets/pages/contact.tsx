@@ -13,6 +13,7 @@ export function Contact() {
     message: "",
   })
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle")
+  const [sendMethod, setSendMethod] = useState<"email" | "whatsapp" | null>(null)
   const [errorMsg, setErrorMsg] = useState("")
 
 
@@ -40,6 +41,7 @@ export function Contact() {
         window.location.href = data.mailto
       }
 
+      setSendMethod("email")
       setStatus("success")
       setFormData({ name: "", email: "", phone: "", service: "", message: "" })
     } catch {
@@ -47,12 +49,31 @@ export function Contact() {
       setErrorMsg("Erro ao enviar mensagem. Tente novamente.")
     }
   }
+
+  const handleWhatsAppSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    
+    if (!formData.name || !formData.message) {
+      setErrorMsg("Por favor, preencha o nome e a mensagem.")
+      return
+    }
+
+    const phoneNumber = "5511960255173"
+    const text = `Olá! Meu nome é ${formData.name}.\nGostaria de saber mais sobre o serviço: ${formData.service || "Não especificado"}\nTelefone: ${formData.phone || "Não fornecido"}\nE-mail: ${formData.email || "Não fornecido"}\nMensagem: ${formData.message}`
+    const encodedText = encodeURIComponent(text)
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedText}`
+    
+    window.open(whatsappUrl, "_blank")
+    setSendMethod("whatsapp")
+    setStatus("success")
+    setFormData({ name: "", email: "", phone: "", service: "", message: "" })
+  }
 const { ref: menuRef, isVisible: menuVisible } = useAnimateOnScroll()
 const { ref: menuRef2, isVisible: menuVisible2 } = useAnimateOnScroll()
 
   return (
     <section id="contato" className="relative py-24 lg:py-32 bg-secondary">
-      <div className="mx-auto max-w-7xl px-6">
+      <div className="mx-auto container px-6">
         <div className="grid gap-16 lg:grid-cols-2">
           <div
             ref={menuRef}
@@ -79,8 +100,8 @@ const { ref: menuRef2, isVisible: menuVisible2 } = useAnimateOnScroll()
                 </div>
                 <div>
                   <p className="text-sm font-semibold text-foreground">Telefone</p>
-                  <a href="tel:+550000000000" className="text-sm text-muted-foreground transition-colors hover:text-gold">
-                (00) 0000-0000
+                  <a href="tel:+5511945384557" className="text-sm text-muted-foreground transition-colors hover:text-gold">
+                (11) 94538-4557
               </a>
                 </div>
               </div>
@@ -115,8 +136,8 @@ const { ref: menuRef2, isVisible: menuVisible2 } = useAnimateOnScroll()
                   <MapPin className="h-5 w-5 text-gold" />
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-foreground">Endereco</p>
-                  <p className="text-sm text-muted-foreground">Brasil</p>
+                  <p className="text-sm font-semibold text-foreground">Endereço</p>
+                  <p className="text-sm text-muted-foreground">São Paulo - Brasil</p>
                 </div>
               </div>
             </div>
@@ -185,14 +206,14 @@ const { ref: menuRef2, isVisible: menuVisible2 } = useAnimateOnScroll()
                   id="service"
                   value={formData.service}
                   onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                  className="rounded-sm border border-border bg-background px-4 py-3 text-sm text-foreground focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold "
+                  className="rounded-sm border cursor-pointer border-border bg-background px-4 py-3 text-sm text-foreground focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold "
                 >
                   <option value="">Selecione um serviço</option>
                   <option value="Controle de Acesso">Controle de Acesso</option>
-                  <option value="Recepção Profissional">Recepção Profissional</option>
-                  <option value="Analise de Risco">Analise de Risco</option>
-                  <option value="Bombeiro Civil">Bombeiro Civil</option>
-                  <option value="Limpeza Profissional">Limpeza Profissional</option>
+                  <option value="Portaria">Portaria</option>
+                  <option value="Segurança Patrimonial">Segurança Patrimonial</option>
+                  <option value="Apoio Operacional para Obras">Apoio Operacional para Obras</option>
+                  <option value="Recepção">Recepção</option>
                 </select>
               </div>
             </div>
@@ -214,14 +235,37 @@ const { ref: menuRef2, isVisible: menuVisible2 } = useAnimateOnScroll()
             <button
               type="submit"
               disabled={status === "loading"}
-              className="inline-flex items-center justify-center gap-2 rounded-sm bg-gold px-8 py-4 text-sm font-bold uppercase tracking-wider text-background transition-colors hover:bg-gold-light"
+              className="inline-flex items-center cursor-pointer justify-center gap-2 rounded-sm bg-gold px-8 py-4 text-sm font-bold uppercase tracking-wider text-background transition-colors hover:bg-gold-light"
             >
-               {status === "loading" ? (
+               {status === "loading" && sendMethod === "email" ? (
                 <>
                   Enviando...
                   <Loader2 className="h-4 w-4 animate-spin" />
                 </>
-              ) : status === "success" ? (
+              ) : status === "success" && sendMethod === "email" ? (
+                <>
+                  Email Enviado
+                  <CheckCircle className="h-4 w-4" />
+                </>
+              ) : (
+                <>
+                  Enviar Email
+                  <Mail className="h-4 w-4" />
+                </>
+              )}
+            </button>
+            <button
+              type="button"
+              onClick={handleWhatsAppSubmit}
+              disabled={status === "loading"}
+              className="inline-flex items-center justify-center cursor-pointer gap-2 rounded-sm bg-gold px-8 py-4 text-sm font-bold uppercase tracking-wider text-background transition-colors hover:bg-gold-light"
+            >
+               {status === "loading"  && sendMethod === "whatsapp" ? (
+                <>
+                  Enviando...
+                  <Loader2 className="h-4 w-4 animate-spin" />
+                </>
+              ) : status === "success" && sendMethod === "whatsapp" ? (
                 <>
                   Mensagem Enviada
                   <CheckCircle className="h-4 w-4" />
@@ -238,7 +282,7 @@ const { ref: menuRef2, isVisible: menuVisible2 } = useAnimateOnScroll()
             )}
 
             {status === "success" && (
-              <p className="text-sm text-green-400 text-center">
+              <p className="text-sm text-primary text-center">
                 Sua mensagem foi enviada com sucesso! Entraremos em contato em breve.
               </p>
             )}

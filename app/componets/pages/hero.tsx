@@ -1,14 +1,39 @@
 "use client"
 
 import Image from "next/image"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, Award, Eye, Shield, Users } from "lucide-react"
 import { useAnimateOnScroll } from "../hooks/use-animate-on-scroll"
+const highlights = [
+  {
+    icon: Shield,
+    title: "Organização e controle operacional",
+    description: "Trabalhamos com processos claros e organização no fluxo de pessoas, garantindo mais segurança e eficiência para empresas, condomínios e obras.",
+  },
+  {
+    icon: Award,
+    title: "Profissionais preparados e treinados",
+    description: "Nossa equipe passa por orientação e treinamento para atuar com disciplina, postura profissional e responsabilidade nas operações de segurança e controle de acesso.",
+  },
+  {
+    icon: Users,
+    title: "Atendimento próximo e transparente",
+    description: "Acreditamos em relações claras e duradouras com nossos clientes, oferecendo suporte e acompanhamento sempre que necessário.",
+  },
+  {
+    icon: Eye,
+    title: "Compromisso com pontualidade e responsabilidade",
+    description: "Cumprimos rigorosamente horários, procedimentos e responsabilidades, garantindo confiança e tranquilidade para nossos clientes.",
+  },
+]
 
 export function Hero() {
   const { ref: logoRef, isVisible: logoVisible } = useAnimateOnScroll()
   const { ref: titleRef, isVisible: titleVisible } = useAnimateOnScroll()
   const { ref: descRef, isVisible: descVisible } = useAnimateOnScroll()
   const { ref: btnsRef, isVisible: btnsVisible } = useAnimateOnScroll()
+  const { ref: highlightsRef, isVisible: highlightsVisible } = useAnimateOnScroll()
+
+
 
 
   return (
@@ -25,7 +50,7 @@ export function Hero() {
         <div className="absolute inset-0 bg-linear-to-r from-background via-background/60 to-transparent" />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-7xl px-6 py-0 pt-20 md:py-32 md:pt-40">
+      <div className="relative z-10 mx-auto container px-6 py-0 pt-20 md:py-32 md:pt-40">
         <div className=" mx-auto flex flex-col md:flex-row  justify-center items-center md:gap-12">
           <div 
           ref={logoRef}
@@ -35,7 +60,7 @@ export function Hero() {
                 : "opacity-0"
             }`}>
             <Image
-              src="/logo5.png"
+              src="/logo55.png"
               alt="EBC Servicos Terceirizados"
             //   width={600}
             //   height={100}
@@ -45,7 +70,7 @@ export function Hero() {
             />
             {/* <div className="absolute inset-0 bg-background/80" /> */}
           </div>
-          <div className="">
+          <div className="max-w-6xl w-auto">
 
          
 
@@ -58,10 +83,11 @@ export function Hero() {
                 : "opacity-0"
             }`}
           >
-          <h1 className="text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl lg:text-6xl text-balance
+          <h1 className="text-4xl font-bold mt-5 md:mt-0 leading-tight tracking-tight text-foreground sm:text-5xl lg:text-6xl text-balance
           ">
-            Excelencia em{" "}
-            <span className="text-gold">serviços terceirizados</span>{" "}
+            Segurança, organização e confiança para
+            {" "}
+            <span className="text-gold">empresas, obras e condomínios</span>{" "}
             
           </h1>
           </div>
@@ -77,8 +103,29 @@ export function Hero() {
 
           
           <p className="mt-6 max-w-lg text-lg leading-relaxed text-muted-foreground animate-in fade-in slide-in-from-right duration-800 ">
-            A EBC Servicos Terceirizados oferece soluções completas em controle de acesso, recepção, bombeiro civil, limpeza e análise de risco com excelência e profissionalismo.
+            A EBC é conduzida por três irmãos com experiências diferentes e complementares nas áreas comercial, administrativa e operacional, garantindo uma gestão organizada, estratégica e focada na qualidade dos serviços.
           </p>
+          <div ref={highlightsRef}
+              className={`mt-10 grid grid-cols-2 gap-6 ${
+                highlightsVisible
+                  ? "animate-in fade-in slide-in-from-bottom-6 duration-700 delay-300"
+                  : "opacity-0"
+              }`}>
+              {highlights.map((item) => (
+                <div key={item.title} className="flex flex-col gap-3">
+                  <div className="flex gap-3 items-center">
+
+                  <div className="flex h-10 w-10 items-center justify-center rounded-sm bg-gold/10 border border-gold/30">
+                    <item.icon className="h-5 w-5 text-gold" />
+                  </div>
+                  <h3 className="text-md font-bold text-foreground">{item.title}</h3>
+                  </div>
+                  <p className="text-sm leading-relaxed text-muted-foreground">
+                    {item.description}
+                  </p>
+                </div>
+              ))}
+            </div>
             </div>
           <div  
           ref={btnsRef}

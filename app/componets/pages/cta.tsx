@@ -1,6 +1,8 @@
+
 'use client'
 import Image from "next/image"
 import { useAnimateOnScroll } from "../hooks/use-animate-on-scroll"
+import Link from "next/link"
 
 export function CTA() {
     const { ref: logoRef, isVisible: logoVisible } = useAnimateOnScroll()
@@ -12,7 +14,7 @@ export function CTA() {
     <section className="relative py-24 lg:py-32 overflow-hidden">
       <div className="absolute inset-0">
         <Image
-          src="/images/service-events.png"
+          src="/fundo.png"
           alt="Seguranca de eventos"
           fill
           className="object-cover"
@@ -20,7 +22,7 @@ export function CTA() {
         <div className="absolute inset-0 bg-background/90" />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-7xl px-6 text-center">
+      <div className="relative z-10 mx-auto container px-6 text-center">
         <div 
         ref={logoRef}
         className={`flex justify-center mb-6 ${
@@ -31,10 +33,10 @@ export function CTA() {
         >
           <div className="flex  items-center justify-center ">
             <Image
-          src="/logo5.png"
+          src="/logo55.png"
           alt="Seguranca de eventos"
-        width={200}
-            height={200}
+          height={0}
+          width={300}
           className="object-cover"
         />
           </div>
@@ -46,10 +48,12 @@ export function CTA() {
         }`}>
 
         <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl text-balance">
-          Soluções sob medida para o seu negócio
+          Atendemos empresas, obras e condomínios em toda a cidade de São Paulo e região.
         </h2>
         <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-         Não espere mais. Fale com nossos especialistas e tenha serviços terceirizados de qualidade sob medida para a sua necessidade.
+         Precisa de segurança e organização para sua operação?
+         <br />
+         Fale com a equipe da EBC e solicite um orçamento
         </p>
         </div>
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -59,12 +63,13 @@ export function CTA() {
               ? "animate-in fade-in slide-in-from-left-6 duration-700 delay-300"
               : "opacity-0"
           }`}>
-          <a
-            href="#contato"
+          <Link
+            href="/#contato"
+            // replace={true}
             className="inline-flex items-center justify-center gap-2 rounded-sm bg-gold px-10 py-4 text-sm font-bold uppercase tracking-wider text-background transition-colors hover:bg-gold-light"
             >
             Solicitar Orçamento Gratuito
-          </a>
+          </Link>
             </div>
             <div
           ref={buttonRef2}
@@ -74,7 +79,7 @@ export function CTA() {
           }`}>
 
           <a
-            href="tel:+5500000000000"
+            href="tel:+5511945384557"
             className="inline-flex items-center justify-center gap-2 rounded-sm border border-gold/30 bg-gold/10 px-10 py-4 text-sm font-bold uppercase tracking-wider text-gold transition-colors hover:bg-gold hover:text-background"
             >
             Ligue Agora

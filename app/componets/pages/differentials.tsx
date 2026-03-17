@@ -6,34 +6,26 @@ import { useAnimateOnScroll } from "../hooks/use-animate-on-scroll"
 const differentials = [
   {
     icon: ShieldCheck,
-    title: "Equipe Qualificada",
-    description: "Profissionais com treinamento contínuo e certificações atualizadas nos mais altos padrões do mercado.",
+    title: "Profissionais preparados e treinados",
+    description: "Nossa equipe passa por orientação e treinamento para atuar com disciplina, postura profissional e responsabilidade nas operações de segurança e controle de acesso.",
   },
   {
     icon: Clock,
-    title: "Disponibilidade 24/7",
-    description: "Atendimento e suporte ininterrupto, garantindo cobertura a qualquer hora do dia ou da noite.",
+    title: "Compromisso com pontualidade e responsabilidade",
+    description: "Cumprimos rigorosamente horários, procedimentos e responsabilidades, garantindo confiança e tranquilidade para nossos clientes.",
   },
   {
     icon: Headphones,
-    title: "Suporte Dedicado",
-    description: "Canal de comunicação exclusivo com resposta rápida para qualquer situação ou necessidade.",
+    title: "Organização e controle operacional",
+    description: "Trabalhamos com processos claros e organização no fluxo de pessoas, garantindo mais segurança e eficiência para empresas, condomínios e obras.",
   },
-  {
-    icon: Lock,
-    title: "Tecnologia de Ponta",
-    description: "Sistemas de monitoramento eletrônico, câmeras inteligentes e equipamentos de última geração.",
-  },
+  
   {
     icon: Zap,
-    title: "Resposta Rapida",
-    description: "Protocolos de ação imediata para responder a qualquer tipo de demanda com agilidade.",
+    title: "Atendimento próximo e transparente",
+    description: "Acreditamos em relações claras e duradouras com nossos clientes, oferecendo suporte e acompanhamento sempre que necessário.",
   },
-  {
-    icon: Target,
-    title: "Planos Personalizados",
-    description: "Cada cliente recebe uma solução sob medida, alinhada às suas necessidades especificas.",
-  },
+  
 ]
 
 export function Differentials() {
@@ -43,7 +35,7 @@ export function Differentials() {
 
   return (
     <section id="diferenciais" className="relative py-24 lg:py-32">
-      <div className="mx-auto max-w-7xl px-6">
+      <div className="mx-auto container px-6">
         <div className="text-center">
           <div ref={titleRef} className={`${
               titleVisible
@@ -51,7 +43,7 @@ export function Differentials() {
                 : "opacity-0"
             }`}>
           <span className="text-sm font-semibold tracking-[0.2em] uppercase text-gold">
-            Por que nos escolher
+            Por que escolher a EBC?
           </span>
           </div>
           <div ref={descRef} className={`${
@@ -60,7 +52,7 @@ export function Differentials() {
                 : "opacity-0"
             }`}>
               <h2 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl text-balance">
-            Diferenciais que fazem a diferença
+            Gestão com experiência complementar
           </h2>
             </div>
             <div ref={descRef} className={`${
@@ -68,8 +60,8 @@ export function Differentials() {
                 ? "animate-in fade-in slide-in-from-right-8 duration-700 delay-300"
                 : "opacity-0"
             }`}>
-          <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
-            Combinamos experiencia, tecnologia e compromisso para entregar o mais alto nivel de serviço.
+          <p className="mx-auto mt-4 max-w-4xl text-muted-foreground">
+            A EBC é conduzida por três irmãos com experiências diferentes e complementares nas áreas comercial, administrativa e operacional, garantindo uma gestão organizada, estratégica e focada na qualidade dos serviços.
           </p>
             </div>
         </div>
@@ -77,7 +69,7 @@ export function Differentials() {
         <div        
         
         ref={menuRef}
-        className={`mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 ${
+        className={`mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-2 ${
               menuVisible
                 ? "animate-in fade-in slide-in-from-bottom-6 duration-700 delay-400"
                 : "opacity-0"

@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image"
-import {  UserCheck, ArrowRight, Sparkles, ScanFace, ShieldAlert, FlameKindling  } from "lucide-react"
+import {  UserCheck, ArrowRight, Sparkles, ScanFace, ShieldAlert, FlameKindling, ScanLine, DoorOpen, ShieldCheck, HardHat, UserRound  } from "lucide-react"
 import { useAnimateOnScroll } from "../hooks/use-animate-on-scroll"
 
 
@@ -32,10 +32,10 @@ const services = [
   // },
 
   {
-  icon: ScanFace,
+  icon: ScanLine,
   title: "Controle de Acesso",
   description:
-    "Soluções modernas de controle de acesso para proteger e organizar o fluxo de pessoas em sua empresa, condomínio ou evento. Utilizamos tecnologia avançada como biometria, cartões de proximidade, catracas e barreiras para garantir segurança, rastreabilidade e gestão eficiente de entradas e saídas.",
+    "Organização e monitoramento do fluxo de pessoas em empresas, condomínios e obras.",
   image: "/images/service-access.jpg",
   features: [
     "Identificação biométrica",
@@ -45,23 +45,37 @@ const services = [
   ],
 },
 {
-  icon: UserCheck,
-  title: "Recepção Profissional",
+  icon: DoorOpen,
+  title: "Portaria",
   description:
-    "Profissionais de recepção altamente treinados para oferecer atendimento cordial e eficiente. Nossa equipe é preparada para recepcionar visitantes, organizar agendas, controlar o acesso de pessoas e transmitir uma imagem profissional e confiável da sua empresa.",
-  image: "/images/service-reception.jpg",
+    "Controle de entrada e saída de visitantes, colaboradores e fornecedores.",
+  image: "/images/portaria.jpg",
   features: [
-    "Atendimento ao público",
-    "Gestão de agendas e visitas",
-    "Controle de entrada e saída",
-    "Atendimento telefônico profissional",
+    "Prevenção e combate a incêndios",
+    "Atendimento de primeiros socorros",
+    "Elaboração de planos de emergência",
+    "Formação e apoio a brigadas de incêndio",
   ],
 },
 {
-  icon: ShieldAlert,
-  title: "Análise de Risco",
+  icon: ShieldCheck,
+  title: "Segurança Patrimonial",
   description:
-    "Identificamos vulnerabilidades e possíveis ameaças à sua empresa, patrimônio ou evento por meio de uma análise detalhada de riscos. Desenvolvemos estratégias personalizadas com medidas preventivas e corretivas para fortalecer a segurança do seu ambiente.",
+    "Proteção de ambientes, pessoas e patrimônios com profissionais treinados.",
+  image: "/images/patrimonial.jpg",
+  features: [
+    "Limpeza corporativa",
+    "Limpeza pós-obra",
+    "Limpeza para eventos",
+    "Conservação e manutenção predial",
+  ],
+},
+
+{
+  icon: HardHat,
+  title: "Apoio Operacional para Obras",
+  description:
+    "Controle de acesso e organização do fluxo de trabalhadores e visitantes.",
   image: "/images/service-risk.jpg",
   features: [
     "Mapeamento de vulnerabilidades",
@@ -71,31 +85,19 @@ const services = [
   ],
 },
 {
-  icon: FlameKindling,
-  title: "Bombeiro Civil",
+  icon: UserRound,
+  title: "Recepção",
   description:
-    "Profissionais qualificados para atuar na prevenção e combate a incêndios, atendimento a emergências e prestação de primeiros socorros. Garantimos suporte completo para empresas, eventos e edificações, sempre em conformidade com as normas e legislações vigentes.",
-  image: "/images/service-firefighter.jpg",
+    "Atendimento profissional e organização no fluxo de visitantes.",
+  image: "/images/service-reception.jpg",
   features: [
-    "Prevenção e combate a incêndios",
-    "Atendimento de primeiros socorros",
-    "Elaboração de planos de emergência",
-    "Formação e apoio a brigadas de incêndio",
+    "Atendimento ao público",
+    "Gestão de agendas e visitas",
+    "Controle de entrada e saída",
+    "Atendimento telefônico profissional",
   ],
 },
-{
-  icon: Sparkles,
-  title: "Limpeza e Conservação",
-  description:
-    "Serviços profissionais de limpeza e conservação para empresas, condomínios e eventos. Contamos com equipes capacitadas e equipamentos modernos para manter ambientes organizados, higienizados e sempre bem apresentados.",
-  image: "/images/service-cleaning.jpg",
-  features: [
-    "Limpeza corporativa",
-    "Limpeza pós-obra",
-    "Limpeza para eventos",
-    "Conservação e manutenção predial",
-  ],
-},
+
 ]
 
 export function Services() {
@@ -104,10 +106,11 @@ export function Services() {
   const { ref: menuRef, isVisible: menuVisible } = useAnimateOnScroll()
   const { ref: titleRef, isVisible: titleVisible } = useAnimateOnScroll()
   const { ref: descRef, isVisible: descVisible } = useAnimateOnScroll()
+  
 
   return (
     <section id="servicos" className="relative py-24 lg:py-32 bg-secondary">
-      <div className="mx-auto max-w-7xl px-6">
+      <div className="mx-auto container px-6">
         <div className="text-center">
           <div ref={titleRef}
             className={`${
@@ -115,7 +118,7 @@ export function Services() {
                 : "opacity-0"
             }`}
           >
-          <span className="text-sm font-semibold tracking-[0.2em] uppercase text-gold">
+          <span className="text-md font-semibold tracking-[0.2em] uppercase text-gold">
             Nossos Serviços
           </span>
           </div>
@@ -125,51 +128,52 @@ export function Services() {
                 : "opacity-0"
             }`}
           >
-          <h2 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl text-balance">
-            Soluções completas em serviços terceirizados para o seu negócio
+          <h2 className="mt-4 text-2xl font-bold tracking-tight text-foreground sm:text-4xl text-balance">
+            Soluções completas em serviços  para o seu negócio
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
-            Oferecemos uma gama completa de serviços terceirizados, adaptados às necessidades especificas de cada cliente.
+           Atendemos empresas, obras e condomínios em toda a cidade de São Paulo e região.
           </p>
           </div>
         </div>
 
-        <div className={`mt-16 flex flex-col gap-12 ${menuVisible ? "animate-in fade-in slide-in-from-bottom-6 duration-700 delay-300" : "opacity-0"}`}
+        <div className={`grid md:grid-cols-3 mt-10 lg:grid-cols-2 gap-6 ${menuVisible ? "animate-in fade-in slide-in-from-bottom-6 duration-700 delay-300" : "opacity-0"}`}
         ref={menuRef}
         
         >
-          {services.map((service, index) => (
+          {services.map((service,) => (
             <div
               key={service.title}
-              className={`grid gap-8 lg:grid-cols-2 lg:items-center ${
-                index % 2 === 1 ? "lg:direction-rtl" : ""
-              }`}
+              className={`group relative overflow-hidden rounded-sm border border-border bg-card p-8 transition-all hover:border-gold/30 `}
             >
               
-              <div className={`${index % 2 === 1 ? "lg:order-2" : ""}`}>
+              
                 <div className="relative aspect-16/10 overflow-hidden rounded-sm">
                   <Image
                     src={service.image}
                     alt={service.title}
                     fill
-                    className="object-cover"
+                    className="object-cover group-hover:scale-105 transition-transform duration-700"
                   />
-                  <div className="absolute inset-0 bg-linear-to-t from-background/40 to-transparent" />
+                  <div className="absolute inset-0 h-auto bg-linear-to-t from-card via-card/50 to-transparent" />
                 </div>
-              </div>
+             
 
-              <div className={`${index % 2 === 1 ? "lg:order-1" : ""}`}>
+              <div >
+                <div className="flex gap-3 items-center">
+
                 <div className="flex h-12 w-12 items-center justify-center rounded-sm bg-gold/10 border border-gold/30">
                   <service.icon className="h-6 w-6 text-gold" />
                 </div>
-                <h3 className="mt-6 text-2xl font-bold text-foreground">
+                <h3 className=" text-2xl font-bold text-foreground">
                   {service.title}
                 </h3>
+                </div>
                 <p className="mt-4 leading-relaxed text-muted-foreground">
                   {service.description}
                 </p>
 
-                <ul className="mt-6 grid grid-cols-2 gap-3">
+                {/* <ul className="mt-6 grid grid-cols-2 gap-3">
                   {service.features.map((feature) => (
                     <li
                       key={feature}
@@ -179,7 +183,7 @@ export function Services() {
                       {feature}
                     </li>
                   ))}
-                </ul>
+                </ul> */}
 
                 <a
                   href="#contato"

@@ -1,12 +1,14 @@
+/* eslint-disable @next/next/no-html-link-for-pages */
 "use client"
 
 import Image from "next/image"
 import { Shield } from "lucide-react"
 import { useAnimateOnScroll } from "../hooks/use-animate-on-scroll"
+import Link from "next/link"
 
 const navLinks = [
   { label: "Inicio", href: "/#inicio" },
-  { label: "Sobre", href: "/#sobre" },
+  { label: "Sobre", href: "/sobre" },
   { label: "Serviços", href: "/#servicos" },
   { label: "Diferenciais", href: "/#diferenciais" },
   { label: "Contato", href: "/#contato" },
@@ -20,7 +22,7 @@ const { ref: menuRef, isVisible: menuVisible } = useAnimateOnScroll()
     <footer className="border-t border-border bg-background">
       <div 
       ref={menuRef}
-          className={`mx-auto max-w-7xl px-6 py-12 ${
+          className={`mx-auto container px-6 py-12 ${
               menuVisible
                 ? "animate-in fade-in slide-in-from-bottom-8 duration-700"
                 : "opacity-0"
@@ -28,7 +30,7 @@ const { ref: menuRef, isVisible: menuVisible } = useAnimateOnScroll()
       >
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           <div className="sm:col-span-2 lg:col-span-1">
-            <a href="#inicio" className="flex items-center gap-3">
+            <Link href="/" className="flex items-center gap-3">
               <Image
                 src="/logo5.png"
                 alt="EBC Servicos Terceirizados"
@@ -41,9 +43,9 @@ const { ref: menuRef, isVisible: menuVisible } = useAnimateOnScroll()
                   Serviços Terceirizados
                 </span>
               </div>
-            </a>
+            </Link>
             <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-              Empresa especializada em serviços terceirizados: controle de acesso, recepção, bombeiro civil, limpeza e análise de risco.
+              A EBC é conduzida por três irmãos com experiências diferentes e complementares nas áreas comercial, administrativa e operacional, garantindo uma gestão organizada, estratégica e focada na qualidade dos serviços.
             </p>
           </div>
 
@@ -69,19 +71,19 @@ const { ref: menuRef, isVisible: menuVisible } = useAnimateOnScroll()
               Servicos
             </h4>
             <nav className="mt-4 flex flex-col gap-3">
-              <a href="#servicos" className="text-sm text-muted-foreground transition-colors hover:text-gold">
+              <a href="/#servicos"  className="text-sm text-muted-foreground transition-colors hover:text-gold">
                 Controle de Acesso
               </a>
-              <a href="#servicos" className="text-sm text-muted-foreground transition-colors hover:text-gold">
+              <a href="/#servicos" className="text-sm text-muted-foreground transition-colors hover:text-gold">
                 Recepção Profissional
               </a>
-              <a href="#servicos" className="text-sm text-muted-foreground transition-colors hover:text-gold">
+              <a href="/#servicos" className="text-sm text-muted-foreground transition-colors hover:text-gold">
                 Análise de Risco
               </a>
-              <a href="#servicos" className="text-sm text-muted-foreground transition-colors hover:text-gold">
+              <a href="/#servicos" className="text-sm text-muted-foreground transition-colors hover:text-gold">
                 Bombeiro Civil
               </a>
-              <a href="#servicos" className="text-sm text-muted-foreground transition-colors hover:text-gold">
+              <a href="/#servicos" className="text-sm text-muted-foreground transition-colors hover:text-gold">
                 Limpeza e Conservação
               </a>
               
@@ -93,8 +95,8 @@ const { ref: menuRef, isVisible: menuVisible } = useAnimateOnScroll()
               Contato
             </h4>
             <div className="mt-4 flex flex-col gap-3">
-              <a href="tel:+550000000000" className="text-sm text-muted-foreground transition-colors hover:text-gold">
-                (00) 0000-0000
+              <a href="tel:+5511945384557" className="text-sm text-muted-foreground transition-colors hover:text-gold">
+                (11) 94538-4557
               </a>
               <a href="mailto:contato@ebcservicos.com.br" className="text-sm text-muted-foreground transition-colors hover:text-gold">
                 contato@ebcservicos.com.br

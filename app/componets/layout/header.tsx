@@ -3,10 +3,11 @@
 import { useState } from "react"
 import Image from "next/image"
 import { Menu, X, Phone } from "lucide-react"
+import Link from "next/link"
 
 const navLinks = [
   { label: "Inicio", href: "/#inicio" },
-  { label: "Sobre", href: "/#sobre" },
+  { label: "Sobre", href: "/sobre" },
   { label: "Serviços", href: "/#servicos" },
   { label: "Diferenciais", href: "/#diferenciais" },
   { label: "Contato", href: "/#contato" },
@@ -18,8 +19,8 @@ export function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3">
-        <a href="#inicio" className="flex items-center gap-3">
+      <div className="mx-auto flex container items-center justify-between px-6 py-3">
+        <Link href="/" className="flex items-center gap-3">
           <Image
             src="/logo5.png"
             alt="EBC Servicos Terceirizados"
@@ -34,7 +35,7 @@ export function Header() {
               Serviços Terceirizados
             </span>
           </div>
-        </a>
+        </Link>
 
         <nav className="hidden items-center gap-8 lg:flex">
           {navLinks.map((link) => (
@@ -50,7 +51,7 @@ export function Header() {
 
         <div className="flex items-center gap-4">
           <a
-            href="tel:+5500000000000"
+            href="tel:+5511945384557"
             className="hidden items-center gap-2 rounded-sm border border-gold/30 bg-gold/10 px-4 py-2 text-sm font-semibold text-gold transition-colors hover:bg-gold hover:text-background md:flex"
           >
             <Phone className="h-4 w-4" />
@@ -81,7 +82,7 @@ export function Header() {
               </a>
             ))}
             <a
-              href="tel:+5500000000000"
+              href="tel:+5511945384557"
               className="flex items-center gap-2 rounded-sm border border-gold/30 bg-gold/10 px-4 py-2 text-sm font-semibold text-gold transition-colors hover:bg-gold hover:text-background"
             >
               <Phone className="h-4 w-4" />

@@ -263,7 +263,7 @@ export default function TrabalheConosco() {
                   name="cv"
                   accept=".pdf,.doc,.docx"
                   onChange={handleFileChange}
-                  className="mt-1 block w-fit text-sm text-muted-foreground  file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-medium file:bg-gold file:text-foreground hover:file:bg-gold/90"
+                  className="mt-1 block w-auto max-w-fit   text-sm text-muted-foreground  file:py-2 file:mb-4 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-medium file:bg-gold file:text-foreground hover:file:bg-gold/90"
                 />
               </div>
               <div className="flex flex-col gap-2">
