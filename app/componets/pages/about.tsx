@@ -6,7 +6,7 @@ import { useAnimateOnScroll } from "../hooks/use-animate-on-scroll"
 
 const lideranca = [
   {
-    nome: "Eric",
+    nome: "Eric Fernandes",
     cargo: "Diretor Comercial",
     descricao:
       "Responsável pela área comercial e relacionamento com clientes, com experiência em grandes empresas como Stone, Cielo e Mercado Pago.",
@@ -20,7 +20,7 @@ const lideranca = [
     foto: "/images/hero-corporate.png",
   },
   {
-    nome: "Caio",
+    nome: "Caio Fernandes",
     cargo: "Diretor Operacional",
     descricao:
       "Ex-militar do Exército Brasileiro, responsável pela área operacional e treinamento das equipes de segurança.",
