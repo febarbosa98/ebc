@@ -60,7 +60,7 @@ export function Hero() {
                 : "opacity-0"
             }`}>
             <Image
-              src="/logo55.png"
+              src="/logo8.png"
               alt="EBC Servicos Terceirizados"
             //   width={600}
             //   height={100}

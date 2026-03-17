@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image"
-import { Clock, Award, Eye, Shield, Users, HandFist  } from "lucide-react"
+import { Clock, Award,  Shield, Users, HandFist  } from "lucide-react"
 import { useAnimateOnScroll } from "../hooks/use-animate-on-scroll"
 
 const lideranca = [

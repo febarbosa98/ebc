@@ -33,7 +33,7 @@ export function CTA() {
         >
           <div className="flex  items-center justify-center ">
             <Image
-          src="/logo55.png"
+          src="/logo8.png"
           alt="Seguranca de eventos"
           height={0}
           width={300}

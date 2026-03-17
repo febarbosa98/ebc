@@ -1,37 +1,14 @@
 "use client"
 
 import Image from "next/image"
-import { Shield, Award, Users, Eye } from "lucide-react"
 import { useAnimateOnScroll } from "../hooks/use-animate-on-scroll"
 
-const highlights = [
-  {
-    icon: Shield,
-    title: "Organização e controle operacional",
-    description: "Trabalhamos com processos claros e organização no fluxo de pessoas, garantindo mais segurança e eficiência para empresas, condomínios e obras.",
-  },
-  {
-    icon: Award,
-    title: "Profissionais preparados e treinados",
-    description: "Nossa equipe passa por orientação e treinamento para atuar com disciplina, postura profissional e responsabilidade nas operações de segurança e controle de acesso.",
-  },
-  {
-    icon: Users,
-    title: "Atendimento próximo e transparente",
-    description: "Acreditamos em relações claras e duradouras com nossos clientes, oferecendo suporte e acompanhamento sempre que necessário.",
-  },
-  {
-    icon: Eye,
-    title: "Compromisso com pontualidade e responsabilidade",
-    description: "Cumprimos rigorosamente horários, procedimentos e responsabilidades, garantindo confiança e tranquilidade para nossos clientes.",
-  },
-]
+
 
 export function AboutShort() {
 
   const { ref: headerRef, isVisible: headerVisible } = useAnimateOnScroll()
   const { ref: textRef, isVisible: textVisible } = useAnimateOnScroll()
-  const { ref: highlightsRef, isVisible: highlightsVisible } = useAnimateOnScroll()
   const { ref: imageRef, isVisible: imageVisible } = useAnimateOnScroll()
   
   return (
