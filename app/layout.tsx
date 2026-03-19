@@ -1,14 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
 
-
-
-// export const metadata: Metadata = {
-//   title: 'EBC Serviços Terceirizados',
-//   description: 'Empresa de segurança especializada em proteção empresarial, segurança de eventos e segurança pessoal. Profissionais qualificados e tecnologia de ponta.',
-//   keywords: ['segurança', 'segurança empresarial', 'segurança de eventos', 'segurança pessoal', 'EBC'],
-// }
-
 export const metadata: Metadata = {
   title: {
     default: 'EBC Serviços Terceirizados',
@@ -51,7 +43,6 @@ export default function RootLayout({
     <html lang="pt-BR">
       <body className="font-sans antialiased bg-background text-foreground">
         {children}
-        {/* <Analytics /> */}
       </body>
     </html>
   )

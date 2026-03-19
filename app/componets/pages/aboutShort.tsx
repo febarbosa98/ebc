@@ -14,7 +14,6 @@ export function AboutShort() {
   return (
     <section id="sobre" className="relative py-24 lg:py-32 bg-gradient-to-bl from-background/40 via-secondary/30 to-background/40  ">
 
-    {/* bg-gradient-to-b from-background via-secondary to-background */}
        
       <div className="mx-auto container px-6 z-10">
         <div className="grid gap-0 lg:grid-cols-2   ">

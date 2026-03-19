@@ -3,6 +3,8 @@
 import Image from "next/image"
 import { ArrowRight, Award, Eye, Shield, Users } from "lucide-react"
 import { useAnimateOnScroll } from "../hooks/use-animate-on-scroll"
+import { useMounted } from "../hooks/useMounted"
+
 const highlights = [
   {
     icon: Shield,
@@ -26,6 +28,7 @@ const highlights = [
   },
 ]
 
+
 export function Hero() {
   const { ref: logoRef, isVisible: logoVisible } = useAnimateOnScroll()
   const { ref: titleRef, isVisible: titleVisible } = useAnimateOnScroll()
@@ -34,13 +37,14 @@ export function Hero() {
   const { ref: highlightsRef, isVisible: highlightsVisible } = useAnimateOnScroll()
 
 
+const mounted = useMounted()
 
 
   return (
     <section id="inicio" className="relative min-h-screen flex items-center overflow-hidden">
       <div className="absolute inset-0">
         <Image
-          src="/fundo5.png"
+          src="/fundo5.webp"
           alt="Seguranca profissional"
           fill
           className="object-cover"
@@ -51,36 +55,34 @@ export function Hero() {
       </div>
 
       <div className="relative z-10 mx-auto container px-6 py-0 pt-20 md:py-32 md:pt-40">
-        <div className=" mx-auto flex flex-col md:flex-row  justify-center items-center md:gap-12">
-          <div 
-          ref={logoRef}
-            className={`relative w-full  h-[360] md:mt-0 md:h-150  ${
-              logoVisible
-                ? "animate-in fade-in zoom-in-95 duration-700"
-                : "opacity-0"
-            }`}>
-            <Image
-              src="/logo8.png"
-              alt="EBC Servicos Terceirizados"
-            //   width={600}
-            //   height={100}
-            fill
-              className="object-contain h-auto "
-              priority
-            />
-            {/* <div className="absolute inset-0 bg-background/80" /> */}
+        <div className=" mx-auto grid  md:grid-cols-2  justify-items-center items-center ">
+          <div
+  ref={logoRef}
+  className={`relative w-[260px] h-[260px] md:w-[550px] md:h-[550px] ${
+  mounted && logoVisible
+    ? "animate-in fade-in zoom-in-95 duration-200"
+    : "opacity-0"
+  }`}
+>
+  <Image
+    src="/logo8.webp"
+    alt="EBC Serviços Terceirizados"
+    fill
+    sizes="(max-width: 640px) 260px, (max-width: 1024px) 350px, 600px"
+    className="object-contain"
+    priority
+  />
           </div>
           <div className="max-w-6xl w-auto">
 
          
 
-            {/* animate-in fade-in slide-in-from-right duration-600 */}
             <div
             ref={titleRef}
             className={`${
-              titleVisible
-                ? "animate-in fade-in slide-in-from-bottom-6 duration-700 delay-200"
-                : "opacity-0"
+  mounted && titleVisible
+    ? "animate-in fade-in slide-in-from-bottom-6 duration-500 delay-200"
+    : "opacity-0"
             }`}
           >
           <h1 className="text-4xl font-bold mt-5 md:mt-0 leading-tight tracking-tight text-foreground sm:text-5xl lg:text-6xl text-balance
@@ -94,22 +96,22 @@ export function Hero() {
 
             <div
             ref={descRef}
-            className={`${
-              descVisible
-                ? "animate-in fade-in slide-in-from-bottom-6 duration-700 delay-300"
-                : "opacity-0"
+           className={`${
+  mounted && descVisible
+    ? "animate-in fade-in slide-in-from-bottom-6 duration-700 delay-300"
+    : "opacity-0"
             }`}
           >
 
           
-          <p className="mt-6 max-w-lg text-lg leading-relaxed text-muted-foreground animate-in fade-in slide-in-from-right duration-800 ">
+          <p className="mt-6 max-w-lg text-lg leading-relaxed text-muted-foreground  ">
             A EBC é conduzida por três irmãos com experiências diferentes e complementares nas áreas comercial, administrativa e operacional, garantindo uma gestão organizada, estratégica e focada na qualidade dos serviços.
           </p>
           <div ref={highlightsRef}
               className={`mt-10 grid grid-cols-2 gap-6 ${
-                highlightsVisible
-                  ? "animate-in fade-in slide-in-from-bottom-6 duration-700 delay-300"
-                  : "opacity-0"
+  mounted && highlightsVisible
+    ? "animate-in fade-in slide-in-from-bottom-6 duration-700 delay-300"
+    : "opacity-0"
               }`}>
               {highlights.map((item) => (
                 <div key={item.title} className="flex flex-col gap-3">
@@ -130,9 +132,9 @@ export function Hero() {
           <div  
           ref={btnsRef}
           className={`mt-10 flex flex-col gap-4 sm:flex-row ${
-              btnsVisible
-                ? "animate-in fade-in slide-in-from-bottom-6 duration-700 delay-500"
-                : "opacity-0"
+  mounted && btnsVisible
+    ? "animate-in fade-in slide-in-from-bottom-6 duration-700 delay-300"
+    : "opacity-0"
             }`}
           >
             <a

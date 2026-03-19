@@ -1,4 +1,3 @@
-"use client"
 
 import Image from "next/image"
 import { Clock, Award,  Shield, Users, HandFist  } from "lucide-react"
@@ -9,7 +8,7 @@ const lideranca = [
     nome: "Eric Fernandes",
     cargo: "Diretor Comercial",
     descricao:
-      "Responsável pela área comercial e relacionamento com clientes, com experiência em grandes empresas como Stone, Cielo e Mercado Pago.",
+      "Responsável pela área comercial e relacionamento com clientes, com experiência em grandes empresas.",
     foto: "/images/hero-corporate.png",
   },
   {
@@ -79,7 +78,7 @@ A EBC nasceu de uma história de vida.
               Com o passar dos anos, cada um seguiu um caminho diferente, adquirindo experiências importantes em áreas distintas. Mas em algum momento percebemos que, juntos, poderíamos transformar tudo o que aprendemos em algo maior.
             </p>
             <p className="mt-4 leading-relaxed text-foreground">
-              Eric, o irmão mais velho, construiu uma sólida carreira na área comercial. Atuou como gerente em grandes empresas do setor financeiro, como Stone, Cielo e atualmente Mercado Pago, desenvolvendo forte experiência em relacionamento com clientes, crescimento de negócios e gestão comercial.
+              Eric, o irmão mais velho, construiu uma sólida carreira na área comercial. Atuou como gerente em grandes empresas do setor financeiro, desenvolvendo forte experiência em relacionamento com clientes, crescimento de negócios e gestão comercial.
             </p>
             <p className="mt-4 leading-relaxed text-foreground">
               Bianca Fernandes, a irmã do meio, é contadora com mais de 10 anos de experiência. Ao longo da carreira trabalhou em escritórios contábeis de grande porte, atendendo milhares de empresas e ajudando negócios a crescerem com organização, planejamento e segurança na gestão.

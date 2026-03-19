@@ -1,6 +1,6 @@
 "use client"
 
-import { ShieldCheck, Clock, Headphones, Lock, Zap, Target } from "lucide-react"
+import { ShieldCheck, Clock, Headphones, Zap,  } from "lucide-react"
 import { useAnimateOnScroll } from "../hooks/use-animate-on-scroll"
 
 const differentials = [

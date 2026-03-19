@@ -6,30 +6,7 @@ import { useAnimateOnScroll } from "../hooks/use-animate-on-scroll"
 
 
 const services = [
-  // {
-  //   icon: Building2,
-  //   title: "Segurança Empresarial",
-  //   description:
-  //     "Proteção completa para o seu negócio. Controle de acesso, vigilância patrimonial, monitoramento eletrônico e equipes treinadas para garantir a segurança do seu patrimônio e colaboradores.",
-  //   image: "/images/service-corporate.png",
-  //   features: ["Controle de acesso", "Vigilância patrimonial", "Monitoramento 24h", "Ronda motorizada"],
-  // },
-  // {
-  //   icon: CalendarDays,
-  //   title: "Segurança de Eventos",
-  //   description:
-  //     "Planejamento e execução de segurança para eventos de qualquer porte. Shows, congressos, feiras, festas corporativas e eventos sociais com total profissionalismo e discrição.",
-  //   image: "/images/service-events.png",
-  //   features: ["Planejamento estrategico", "Controle de multidão", "Area VIP", "Gestão de crises"],
-  // },
-  // {
-  //   icon: UserCheck,
-  //   title: "Segurança Pessoal",
-  //   description:
-  //     "Proteção individualizada para executivos, personalidades e pessoas que necessitam de acompanhamento especializado. Segurança aproximada com total discrição e eficiência.",
-  //   image: "/images/service-personal.png",
-  //   features: ["Escolta pessoal", "Análise de risco", "Rotas seguras", "Proteção 24 horas"],
-  // },
+ 
 
   {
   icon: ScanLine,
@@ -37,12 +14,7 @@ const services = [
   description:
     "Organização e monitoramento do fluxo de pessoas em empresas, condomínios e obras.",
   image: "/images/service-access.jpg",
-  features: [
-    "Identificação biométrica",
-    "Cartões de proximidade",
-    "Catracas e barreiras automatizadas",
-    "Registro e controle de visitantes",
-  ],
+ 
 },
 {
   icon: DoorOpen,
@@ -50,12 +22,7 @@ const services = [
   description:
     "Controle de entrada e saída de visitantes, colaboradores e fornecedores.",
   image: "/images/portaria.jpg",
-  features: [
-    "Prevenção e combate a incêndios",
-    "Atendimento de primeiros socorros",
-    "Elaboração de planos de emergência",
-    "Formação e apoio a brigadas de incêndio",
-  ],
+  
 },
 {
   icon: ShieldCheck,
@@ -63,12 +30,7 @@ const services = [
   description:
     "Proteção de ambientes, pessoas e patrimônios com profissionais treinados.",
   image: "/images/patrimonial.jpg",
-  features: [
-    "Limpeza corporativa",
-    "Limpeza pós-obra",
-    "Limpeza para eventos",
-    "Conservação e manutenção predial",
-  ],
+  
 },
 
 {
@@ -77,12 +39,7 @@ const services = [
   description:
     "Controle de acesso e organização do fluxo de trabalhadores e visitantes.",
   image: "/images/service-risk.jpg",
-  features: [
-    "Mapeamento de vulnerabilidades",
-    "Plano estratégico de segurança",
-    "Consultoria especializada",
-    "Auditorias e revisões periódicas",
-  ],
+ 
 },
 {
   icon: UserRound,
@@ -90,12 +47,7 @@ const services = [
   description:
     "Atendimento profissional e organização no fluxo de visitantes.",
   image: "/images/service-reception.jpg",
-  features: [
-    "Atendimento ao público",
-    "Gestão de agendas e visitas",
-    "Controle de entrada e saída",
-    "Atendimento telefônico profissional",
-  ],
+  
 },
 
 ]
